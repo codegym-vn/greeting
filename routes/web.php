@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/greeting', function () {
+    echo 'Hello World!';
+});
+
+Route::get('/greeting/{name?}', function ($name = null) {
+    if ($name) {
+        echo 'Hello ' . $name . '!';
+    } else {
+        echo 'Hello World!';
+    }
+});
